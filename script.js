@@ -3,15 +3,16 @@ let nombre = "John Doe";
 let dinero = 100000;
 const datosBancarios = ["Avenida Maipú 587", "Cuenta Corriente en Pesos", "137524000687943156888", "BARCO.CASA.NARANJA"];
 
-function inicio() {
-    let claveIngresada = prompt("Ingrese la clave de la tarjeta. (Predeterminado 0000)");
+function verificar_clave() {
     let bloqueo = true;
-    for (let intentos = 3; clave === claveIngresada || intentos === 0; intentos--) {
-        alert("Clave incorrecta.");
+    for (let intentos = 3; intentos > 0; intentos--) {
         claveIngresada = prompt("Ingrese la clave de la tarjeta. (Predeterminado 0000)");
-    }
-    if (clave === claveIngresada) {
-        bloqueo = false;
+        if (clave === claveIngresada) {
+            bloqueo = false;
+            intentos = 0;
+        } else {
+            alert("Clave incorrecta.");
+        }
     }
 
     return bloqueo;
@@ -19,7 +20,7 @@ function inicio() {
 
 function menu() {
     alert("Bienvenido " + nombre);
-    let opcion = prompt("¿Qué acción deseas realizar? (Seleccione el número de la opción)\n1 -  Retirar Dinero\n2 -  Ingresar Dinero\n3 -  Transferir Dinero\n4 -  Ver Datos Bancarios\n5 -  Cambiar Clave\n6 -  Cambiar Nombre\n7 -  Salir");
+    let opcion = prompt("¿Qué acción deseas realizar? (Seleccione el número de la opción)\n1 -  Retirar Dinero\n2 -  Ingresar Dinero\n3 -  Transferir Dinero\n4 -  Ver Datos Bancarios\n5 -  Cambiar Clave\n6 -  Cambiar Nombre\n7 - Ingresar nuevamente al banco\n8 -  Salir");
     switch (parseInt(opcion)) {
         case 1:
             retirar_dinero();
@@ -42,18 +43,28 @@ function menu() {
             break;
 
         case 5:
-            
+            cambiar_clave();
+
             break;
 
         case 6:
-            
+            cambiar_nombre();
+
             break;
 
         case 7:
+            inicio();
             
+            break;
+
+        case 8:
+            alert("Que tenga un buen día.");
             break;
     
         default:
+            alert("El número ingresado no está dentro del rango de opciones. Intentelo nuevamente.");
+            menu();
+
             break;
     }
 }
@@ -103,10 +114,30 @@ function datos_bancarios() {
     menu();
 }
 
-alert("Bienvenido al Cajero Virtual");
-
-if (inicio()) {
-    
-} else {
-    alert("Se excedieron la cantidad de intentos, pruebe nuevamente más tarde.")
+function cambiar_nombre() {
+    const nuevoNombre = prompt("Ingrese su nuevo nombre:");
+    nombre = nuevoNombre;
+    menu();
 }
+
+function cambiar_clave() {
+    let nuevaClave = prompt("Ingrese su nueva clave. Solo puede tener hasta 4 dígitos.");
+    while (nuevaClave.length > 4) {
+        alert("Error, la clave contiene más de 4 caracteres");
+        nuevaClave = prompt("Ingrese su nueva clave. Solo puede tener hasta 4 dígitos.");
+    }
+    clave = nuevaClave;
+    menu();
+}
+
+function inicio() {
+    alert("Bienvenido al Cajero Virtual");
+    
+    if (verificar_clave()) {
+        alert("Se excedieron la cantidad de intentos, pruebe nuevamente más tarde.");
+    } else {
+        menu();
+    }
+}
+
+inicio();
