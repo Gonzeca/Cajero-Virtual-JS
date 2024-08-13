@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Cajero Virtual</title>
 </head>
 <body>
-    Bienvenido al Cajero Virtual
+    <section class="firstStage">
+        <h1>Bienvenido a CajerOS</h1>
+        <h2>Un cajero tan complejo que parece un sistema autónomo</h2>
+    
+        <h4>Presione en cualquier lugar para ingresar la tarjeta</h4>
+    </section>
+    <section class="secondStage">
+        Ingrese la clave de su tarjeta:
+        <br> (Default: PGT---PGT---PGT)
+        <div class="keyButtons">
+            <button class="keyButton">PGT</button>
+            <button class="keyButton">VUA</button>
+            <button class="keyButton">LOM</button>
+            <button class="keyButton">ZTE</button>
+            <button class="keyButton">ANM</button>
+            <button class="keyButton">TWI</button>
+            <button class="keyButton">BUK</button>
+            <button class="keyButton">QHP</button>
+        </div>
+
+        <input type="text" class="textBox" disabled> <button class="backspace"><--</button>
+        <button class="confirm" disabled>Confirmar</button>
+    </section>
 
     <script src="script.js"></script>
 </body>
