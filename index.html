@@ -28,7 +28,52 @@
         </div>
 
         <input type="text" class="textBox" disabled> <button class="backspace"><--</button>
-        <button class="confirm" disabled>Confirmar</button>
+        <button class="confirm" id="confirmKey" disabled>Confirmar</button>
+    </section>
+
+    <section class="menu">
+        <h1>Bienvenido John</h1>
+
+        <aside>
+            <ul>
+                <li>Transacciones<ul>
+                    <li><button class="optionAside" id="btnExtract">Retirar Dinero</button></li>
+                    <li><button class="optionAside" id="btnDeposit">Ingresar Dinero</button></li>
+                    <li><button class="optionAside" id="btnTransfer">Transferir Dinero</button></li>
+                </ul></li>
+                <button class="optionAside" id="btnProfile">Datos Bancarios</button>
+                <button class="optionAside" id="btnLogout">Cerrar Cuenta</button>
+            </ul>
+        </aside>
+    </section>
+
+    <section class="extract">
+        <h3>Monto a retirar:</h3>
+        <input type="number" class="inputNumber" id="extractAmount">
+        <button class="confirm">Confirmar</button>
+    </section>
+
+    <section class="deposit">
+        <h3>Monto a ingresar:</h3>
+        <input type="number" class="inputNumber" id="depositAmount">
+        <button class="confirm">Confirmar</button>
+    </section>
+
+    <section class="transfer">
+        <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="Alias"> <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="CBU">
+        <input type="text" class="inputBankAccount" id="aliasCBU">
+        <h3>Monto a transferir:</h3>
+        <input type="number" class="inputNumber" id="extractAmount">
+        <button class="confirm">Confirmar</button>
+    </section>
+
+    <section class="profile">
+        <span class="profileInfo">Dirección Bancaria: Avenida Maipú 587</span>
+        <span class="profileInfo">Cuenta corriente en pesos</span>
+        <span class="profileInfo">CBU: <input type="text" class="inputProfile" id="profileCBU" value="137524000687943156888"></span>
+        <span class="profileInfo">ALIAS: <input type="text" class="inputProfile" id="profileAlias" value="BARCO.CASA.NARANJA"></span>
+
+        <button class="confirm">Guardar</button>
     </section>
 
     <script src="script.js"></script>

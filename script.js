@@ -1,13 +1,16 @@
 const firstStage = document.querySelector(".firstStage");
+firstStage.style.display = "block";
 
 firstStage.addEventListener("click", () => {
+
     firstStage.style.display = "none";
-    document.querySelector(".secondStage").style.display = "block";
+    const secondStage = document.querySelector(".secondStage");
+    secondStage.style.display = "block";
 
     const keyButton = document.querySelectorAll(".keyButton");
     const backspace = document.querySelector(".backspace");
     const textBox = document.querySelector(".textBox");
-    const confirm = document.querySelector(".confirm");
+    const confirmKey = document.querySelector("#confirmKey");
     let countKeyButtons = 0;
 
     keyButton.forEach(btn => {
@@ -17,7 +20,7 @@ firstStage.addEventListener("click", () => {
 
                 if (countKeyButtons === 3) {
                     textBox.value += btn.textContent;
-                    confirm.disabled = false;
+                    confirmKey.disabled = false;
                 } else {
                     textBox.value += btn.textContent + "---";
                 }
@@ -34,14 +37,19 @@ firstStage.addEventListener("click", () => {
                 textBox.value = textBox.value.slice(0,-6);
             } else if (countKeyButtons === 2) {
                 textBox.value = textBox.value.slice(0,-3);
-                confirm.disabled = true;
+                confirmKey.disabled = true;
             }
         } 
     });
 
-    confirm.addEventListener("click", () => {
+    confirmKey.addEventListener("click", () => {
         if (textBox.value === "PGT---PGT---PGT") {
-            window.location.href = "/menu";
+            
+            const menu = document.querySelector(".menu");
+            secondStage.style.display = "none";
+            menu.style.display = "block";
+
         }
     });
+
 });
