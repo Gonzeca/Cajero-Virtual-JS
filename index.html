@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style.css">
     <title>Cajero Virtual</title>
 </head>
 <body>
-    <section class="firstStage">
+    <section class="presentation">
         <h1>Bienvenido a CajerOS</h1>
         <h2>Un cajero tan complejo que parece un sistema autónomo</h2>
     
         <h4>Presione en cualquier lugar para ingresar la tarjeta</h4>
     </section>
-    <section class="secondStage">
-        Ingrese la clave de su tarjeta:
-        <br> (Default: PGT---PGT---PGT)
+    <section class="cardSection">
+        Ingrese los números de su tarjeta:
+        <input type="number" id="cardNumber">
+        <button class="confirm" id="confirmCardNumber">Confirmar</button>
+        <button class="confirm" id="btnNewCard">Crear tarjeta</button>
+    </section>
+    <section class="keySection">
+        Ingrese la clave de cuenta:
         <div class="keyButtons">
             <button class="keyButton">PGT</button>
             <button class="keyButton">VUA</button>
@@ -27,12 +33,21 @@
             <button class="keyButton">QHP</button>
         </div>
 
-        <input type="text" class="textBox" disabled> <button class="backspace"><--</button>
+        <input type="text" class="textBox" id="inputKey" disabled> <button class="backspace"><--</button>
         <button class="confirm" id="confirmKey" disabled>Confirmar</button>
+    </section>
+    <section class="newCardSection">
+        <span class="info">Tu nueva tarjeta es: <span id="newCard"></span></span>
+        <span class="info">Tu clave de seguridad es: <span id="newKey"></span></span>
+        <span class="info">Tu CBU es: <span id="newCBU"></span></span>
+        <span class="info">Ingrese su alias: <input type="text" class="textBox" id="newAlias"></span>
+        <span class="info">Ingrese su nombre: <input type="text" class="textBox" id="newName"></span>
+        <button class="confirm" id="confirmNewCard">Guardar</button>
     </section>
 
     <section class="menu">
-        <h1>Bienvenido John</h1>
+        <h1>Bienvenido <span class="menuName"></h1>
+        <h2>Dinero en cuenta: $<span class="cash"></span></h2>
 
         <aside>
             <ul>
@@ -48,32 +63,44 @@
     </section>
 
     <section class="extract">
+        <span class="material-symbols-outlined arrowBack">
+            arrow_back
+        </span>
         <h3>Monto a retirar:</h3>
         <input type="number" class="inputNumber" id="extractAmount">
-        <button class="confirm">Confirmar</button>
+        <button class="confirm" id="confirmExtract">Confirmar</button>
     </section>
 
     <section class="deposit">
+        <span class="material-symbols-outlined arrowBack">
+            arrow_back
+        </span>
         <h3>Monto a ingresar:</h3>
         <input type="number" class="inputNumber" id="depositAmount">
-        <button class="confirm">Confirmar</button>
+        <button class="confirm" id="confirmDeposit">Confirmar</button>
     </section>
 
     <section class="transfer">
-        <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="Alias"> <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="CBU">
+        <span class="material-symbols-outlined arrowBack">
+            arrow_back
+        </span>
+        <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="Alias" checked> <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="CBU">
         <input type="text" class="inputBankAccount" id="aliasCBU">
         <h3>Monto a transferir:</h3>
-        <input type="number" class="inputNumber" id="extractAmount">
-        <button class="confirm">Confirmar</button>
+        <input type="number" class="inputNumber" id="transferAmount">
+        <button class="confirm" id="confirmTransfer">Confirmar</button>
     </section>
 
     <section class="profile">
-        <span class="profileInfo">Dirección Bancaria: Avenida Maipú 587</span>
-        <span class="profileInfo">Cuenta corriente en pesos</span>
-        <span class="profileInfo">CBU: <input type="text" class="inputProfile" id="profileCBU" value="137524000687943156888"></span>
-        <span class="profileInfo">ALIAS: <input type="text" class="inputProfile" id="profileAlias" value="BARCO.CASA.NARANJA"></span>
+        <span class="material-symbols-outlined arrowBack">
+            arrow_back
+        </span>
+        <span class="profileInfo">Dirección Bancaria: <span id="bankLocation"></span></span>
+        <span class="profileInfo" id="typeAccount">Cuenta corriente en pesos</span>
+        <span class="profileInfo">CBU: <input type="text" class="inputProfile" id="profileCBU"></span>
+        <span class="profileInfo">ALIAS: <input type="text" class="inputProfile" id="profileAlias"></span>
 
-        <button class="confirm">Guardar</button>
+        <button class="confirm" id="saveProfile">Guardar</button>
     </section>
 
     <script src="script.js"></script>
