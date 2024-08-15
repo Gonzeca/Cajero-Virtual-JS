@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Luxurious+Roman&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Cantarell", sans-serif;
+}
+
+body {
+  background-color: rgb(191, 233, 219);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Luxurious Roman", serif;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h4 {
+  margin-top: 160px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -9,5 +33,85 @@ input[type=number] {
 }
 
 section {
-    display: none;
+  height: 100vh;
+  display: none;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type='number'] {
+  width: 400px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.confirm {
+  padding: 5px 20px;
+  border: grey solid 1px;
+  background-color: rgb(125, 224, 163);
+  font-size: 1.2rem;
+}
+
+.confirm:hover {
+  cursor: pointer;
+  background-color: rgb(29, 189, 90);
+}
+
+.keyButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.keyButton {
+  padding: 15px 15px;
+  font-size: 1.2rem;
+  background-color: white;
+}
+
+.keyButton:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.innerBox {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.textBox {
+  padding: 15px 50px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.arrowBack {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: black solid 2px;
+}
+
+.arrowBack:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.radioSelector {
+  display: flex;
+  gap: 20px;
+}
+
+.radio {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  line-height: 0px;
+}
+
+.inputProfile {
+  width: 100%
 }

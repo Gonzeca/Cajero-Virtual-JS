@@ -33,7 +33,11 @@
             <button class="keyButton">QHP</button>
         </div>
 
-        <input type="text" class="textBox" id="inputKey" disabled> <button class="backspace"><--</button>
+        <div class="innerBox">
+            <input type="text" class="textBox" id="inputKey" disabled> <button class="backspace"><span class="material-symbols-outlined">
+                keyboard_backspace
+            </span></button>
+        </div>
         <button class="confirm" id="confirmKey" disabled>Confirmar</button>
     </section>
     <section class="newCardSection">
@@ -84,7 +88,14 @@
         <span class="material-symbols-outlined arrowBack">
             arrow_back
         </span>
-        <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="Alias" checked> <input type="radio" class="inputTypeBank" name="typeAliasCBU" value="CBU">
+        <div class="radioSelector">
+            <div class="radio">
+                <label for="typeAlias">Alias</label><input type="radio" class="inputTypeBank" name="typeAlias" value="Alias" checked>
+            </div>
+            <div class="radio">
+                <label for="typeCBU">CBU</label><input type="radio" class="inputTypeBank" name="typeCBU" value="CBU">
+            </div>
+        </div>
         <input type="text" class="inputBankAccount" id="aliasCBU">
         <h3>Monto a transferir:</h3>
         <input type="number" class="inputNumber" id="transferAmount">

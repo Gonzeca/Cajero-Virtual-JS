@@ -116,8 +116,10 @@ const extract = document.querySelector(".extract");
 const extractAmount = document.querySelector("#extractAmount");
 const confirmExtract = document.querySelector("#confirmExtract");
 confirmExtract.addEventListener("click", () => {
-    accountCash[accountId] -= parseInt(extractAmount.value);
-    menuSection(extract);
+    if (parseInt(extractAmount.value) <= accountCash[accountId]) {
+        accountCash[accountId] -= parseInt(extractAmount.value);
+        menuSection(extract);
+    }
 });
 
 const deposit = document.querySelector(".deposit");
@@ -171,7 +173,7 @@ let accountId;
 
 function changePanel(panel1, panel2) {
     panel1.style.display = "none";
-    panel2.style.display = "block";
+    panel2.style.display = "flex";
 }
 
 function backToMenu() {
