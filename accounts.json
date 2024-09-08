@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 0,
+        "name" : "John Doe",
+        "cash" : 100000,
+        "cardNumber" : "0000000000000000",
+        "key" : "PGT---PGT---PGT",
+        "bank" : "Avenida Maipú 587",
+        "CBU" : "137524000687943156888",
+        "alias" : "BARCO.CASA.NARANJA"
+    },
+    {
+        "id" : 1,
+        "name" : "Jane Doe",
+        "cash" : 100000,
+        "cardNumber" : "1000000000000000",
+        "key" : "VUA---VUA---VUA",
+        "bank" : "Avenida Córdoba 4080",
+        "CBU" : "543800871325468021633",
+        "alias" : "CANOA.TECHO.PISO"
+    }
+]

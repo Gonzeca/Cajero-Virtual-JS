@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Cantarell", sans-serif;
+  transition: opacity 1s;
 }
 
 body {
@@ -12,6 +13,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Luxurious Roman", serif;
+}
+
+.loadIcon {
+  position: fixed;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  z-index: -999;
+  width: 300px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0;
 }
 
 h1 {

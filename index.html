@@ -8,6 +8,8 @@
     <title>Cajero Virtual</title>
 </head>
 <body>
+    <img src="media/load.gif" alt="Loading..." class="loadIcon">
+
     <section class="presentation">
         <h1>Bienvenido a CajerOS</h1>
         <h2>Un cajero tan complejo que parece un sistema autónomo</h2>
@@ -44,7 +46,7 @@
         <span class="info">Tu nueva tarjeta es: <span id="newCard"></span></span>
         <span class="info">Tu clave de seguridad es: <span id="newKey"></span></span>
         <span class="info">Tu CBU es: <span id="newCBU"></span></span>
-        <span class="info">Ingrese su alias: <input type="text" class="textBox" id="newAlias"></span>
+        <span class="info">Tu alias es: <span id="newAlias"></span></span>
         <span class="info">Ingrese su nombre: <input type="text" class="textBox" id="newName"></span>
         <button class="confirm" id="confirmNewCard">Guardar</button>
     </section>
@@ -90,10 +92,10 @@
         </span>
         <div class="radioSelector">
             <div class="radio">
-                <label for="typeAlias">Alias</label><input type="radio" class="inputTypeBank" name="typeAlias" value="Alias" checked>
+                <label for="typeAlias">Alias</label><input type="radio" class="inputTypeBank" name="typeCBUAlias" value="Alias" checked>
             </div>
             <div class="radio">
-                <label for="typeCBU">CBU</label><input type="radio" class="inputTypeBank" name="typeCBU" value="CBU">
+                <label for="typeCBU">CBU</label><input type="radio" class="inputTypeBank" name="typeCBUAlias" value="CBU">
             </div>
         </div>
         <input type="text" class="inputBankAccount" id="aliasCBU">
@@ -114,6 +116,7 @@
         <button class="confirm" id="saveProfile">Guardar</button>
     </section>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>
