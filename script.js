@@ -252,15 +252,31 @@ saveProfile.addEventListener('click', () => {
 
 
 async function readAccounts() {
-    const file = await fetch('./accounts.json');
-    const json = await file.json();
-    accounts = await json;
+    try {
+        const file = await fetch('./accounts.json');
+        const json = await file.json();
+        accounts = await json;
+    } catch (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Ha ocurrido un error inesperado, por favor, intente ingresar nuevamente más tarde.",
+            text: "Something went wrong!"
+        });
+    }
 }
 
 async function getRandomWords() {
-    const words = await fetch('https://random-word-api.herokuapp.com/word?lang=es&number=3&length=5');
-    const json = await words.json();
-    return json;
+    try {
+        const words = await fetch('https://random-word-api.herokuapp.com/word?lang=es&number=3&length=5');
+        const json = await words.json();
+        return json;
+    } catch (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Ha ocurrido un error inesperado, por favor, vuelva a intentarlo más tarde.",
+            text: "Something went wrong!"
+        });
+    }
 }
 
 function loadScreen(panel) {
